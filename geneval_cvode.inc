@@ -15,8 +15,8 @@ ENDCOMMENT
 INDEPENDENT {t FROM 0 TO 1 WITH 1 (ms)}
 
 NEURON {
-	RANGE gmax, g, i
-	GLOBAL erev, Inf, Tau, vrest
+	RANGE gmax, g, i, Tau
+	RANGE erev, Inf, vrest
 } : end NEURON
 
 CONSTANT {

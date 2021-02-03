@@ -19,7 +19,7 @@ NEURON {
 	USEION k READ ek WRITE ik
 	USEION ca READ cai
 	RANGE  gmax, ik, g, i
-        GLOBAL alpha,beta
+        RANGE alpha,beta
 }
 
 PARAMETER { 

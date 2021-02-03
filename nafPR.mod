@@ -42,7 +42,7 @@ PARAMETER {
 
 NEURON {
 	RANGE gmax, g, i
-	GLOBAL erev, Inf, Tau, vrest, qq10
+	RANGE erev, Inf, Tau, vrest, qq10
 } : end NEURON
 
 CONSTANT {

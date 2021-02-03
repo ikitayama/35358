@@ -34,8 +34,8 @@ ENDCOMMENT
 
 NEURON {
   SUFFIX nothing
-  GLOBAL BVBASE, RES, VECST_INSTALLED  : bit vector base number (typically 0 or -1)
-  GLOBAL ALL,NEG,POS,CHK,NOZ
+  RANGE BVBASE, RES, VECST_INSTALLED  : bit vector base number (typically 0 or -1)
+  RANGE ALL,NEG,POS,CHK,NOZ
 }
 
 PARAMETER {
