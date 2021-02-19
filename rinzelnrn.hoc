@@ -1,0 +1,31 @@
+begintemplate rinzelnrn
+  public soma, dend
+  create soma, dend
+
+  proc init() {
+    geometry()
+  }
+
+  proc geometry() {
+    init_topology_0()
+    init_dx_0()
+    init_diam_0()
+    access soma
+  }
+
+  proc init_topology_0() {
+    soma connect dend(0), 1
+  }
+
+  proc init_dx_0() { local p
+    p = 0.5 // proportion of area taken up by soma
+    soma.L = p*20/PI
+    dend.L = (1-p)*20/PI
+  }
+
+  proc init_diam_0() {
+    soma.diam = 10
+    dend.diam = 10
+  }
+
+endtemplate rinzelnrn
