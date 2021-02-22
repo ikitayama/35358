@@ -81,6 +81,8 @@ def test_direct_memory_transfer():
     coreneuron.enable = True
 
     pc = h.ParallelContext()
+    pc.set_maxstep(10)
+
     h.stdinit()
     pc.psolve(h.tstop)
     #tran = [h.t, cell.soma(.5).v, cell.soma(.5).hh.m]
@@ -93,6 +95,8 @@ def test_direct_memory_transfer():
     f = open('v.dat', 'w')
     for i in range(tv.size()):
        print('{} {}'.format(tv[i], v[i]), file=open("v.dat","a"))
+
+    h.quit()
 
 if __name__ == "__main__":
     test_direct_memory_transfer()
