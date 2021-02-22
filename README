@@ -1,5 +1,51 @@
 % $Id: README,v 1.5 2004/02/10 15:51:41 billl Exp $
 
+## Running with NEURON or CoreNEURON
+
+* Make sure NEURON installation is in $PATH and $PYTHONPATH
+
+```
+export PATH=$HOME/install/bin/:$PATH
+export PYTHONPATH=$HOME/install/lib/python/:$PYTHONPATH
+```
+
+* Compile mod files for CoreNEURON
+
+```
+nrnivmodl-core mod_corenrn/
+```
+
+* Compile mod files NEURON
+
+```
+# neuron only + coreneuron mod files
+cp mod_corenrn/* mod_nrn/
+nrnivmodl mod_nrn
+```
+
+* Now run coreneuron and save results
+
+```
+./x86_64/special -python test_direct.py
+mv v.dat coreneuron.v.dat
+```
+
+* Now run neuron and save results
+
+```
+sed -i -e 's/coreneuron\.enable = True/coreneuron\.enable = False/g' test_direct.py
+./x86_64/special -python test_direct.py
+mv v.dat neuron.v.dat
+```
+
+* Compare results
+
+```
+diff coreneuron.v.dat neuron.v.dat
+```
+
+## Original instructions
+
 To run under linux/unix:
   unzip b04feb12.zip
   cd b04feb12
